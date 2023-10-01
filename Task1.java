@@ -10,11 +10,11 @@ public class Task1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in, "UTF-8");
 
-        System.out.print("Введите следующую информацию через пробел: ");
-        System.out.print("1) ФИО");
-        System.out.print("2) Дата рождения");
-        System.out.print("3) Номер телефона");
-        System.out.print("4) Пол");
+        System.out.println("Введите следующую информацию через пробел: ");
+        System.out.println("1) ФИО - строки");
+        System.out.println("2) Дата рождения - строка формата dd.mm.yyyy");
+        System.out.println("3) Номер телефона - целое беззнаковое число без форматирования");
+        System.out.println("4) Пол - символ латиницей f или m");
         String str = input.nextLine();
 
         Person person;
@@ -108,7 +108,7 @@ class Person {
     }
 
     protected static Date getBirthday(String input) throws RuntimeException {
-        Pattern pattern = Pattern.compile("([0-9]{1,2}).([0-9]{1,2}).([0-9]{4})");
+        Pattern pattern = Pattern.compile("([0-9]{1,2})\\.([0-9]{1,2})\\.([0-9]{4})");
         Matcher matcher = pattern.matcher(input);
         if (!matcher.find())
             throw new RuntimeException("Дата рождения не удалось найти");
